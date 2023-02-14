@@ -14,7 +14,7 @@ RSpec.feature 'User wants to submit/create a violation' do
 
     fill_in 'violation_title', with: violation_title
     fill_in 'violation_description', with: violation_text
-    fill_in 'violation_image_path', with: violation_image_path
+    # fill_in 'violation_image_path', with: violation_image_path
 
     click_on 'Submit Violation'
 
@@ -31,7 +31,7 @@ RSpec.feature 'User wants to submit/create a violation' do
       click_on 'Submit a Violation'
 
       fill_in 'viloation_description', with: violation_text
-      fill_in 'violation_image_path', with: violation_image_path
+      # fill_in 'violation_image_path', with: violation_image_path
       click_on 'Submit Violation'
 
       expect(page).to have_content "Name can't be blank"
@@ -46,7 +46,8 @@ RSpec.feature 'User wants to submit/create a violation' do
       click_on 'Submit a Violation'
 
       fill_in 'violation_title', with: violation_title
-      fill_in 'violation_image_path', with: violation_image_path
+      # fill_in 'violation_image_path', with: violation_image_path
+      # holding off on violation images until S3 is setup
       click_on 'Submit Violation'
 
       expect(page).to have_content "Description can't be blank"
