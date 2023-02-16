@@ -10,7 +10,7 @@ class ViolationsController < ApplicationController
   end
 
   def create
-    @violation = Violation.create!(violation_params)
+    @violation = Violation.new(violation_params)
     respond_to do |format|
       if @violation.save
         format.html { redirect_to @violation, notice: 'violation was successfully created.' }
