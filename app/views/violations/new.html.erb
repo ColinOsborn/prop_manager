@@ -1,0 +1,24 @@
+<h1>Report a Violation</h1>
+
+<p>Here's some filler text with some details pertaining to the details needed when reporting a violation, with probably some rules too</p>
+
+<%= form_for(@violation, :html => {multipart: true, class: "form-horizontal", role: "form"}) do |f| %>
+  <% if @violation.errors.any? %>
+    <%= pluralize(@violation.errors.count, "error") %>
+        prohibited this violation from being saved:
+            <% @violation.errors.full_messages.each do |msg| %>
+              <%= msg %>
+              <% end %>
+    <% end %>
+  <% end %>
+
+<%= form_for(@violation, html: {multipart: true}) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <%= f.label :image, "Attach an Image" %>
+  <%= f.file_field :image %>
+
+  <%= f.submit 'Submit Violation' %>
+<% end %>
