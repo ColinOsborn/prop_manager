@@ -21,4 +21,11 @@ RSpec.describe ViolationsController, type: :controller do
       expect(response).to render_template('edit')
     end
   end
+
+  describe 'POST new' do
+    it 'renders the new template' do
+      post :new
+      expect(response).to render_template('new')
+    end
+  end
 end
