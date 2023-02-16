@@ -1,7 +1,8 @@
 class ViolationsController < ApplicationController
-  before_action :set_violation, only: %i[ show edit update destroy ]
+  before_action :set_violation, only: %i[ show edit update ]
 
   def index
+    @violations = Violation.all.last(5)
   end
 
   def new
@@ -10,6 +11,14 @@ class ViolationsController < ApplicationController
 
   def create
     @violation = Violation.create!(violation_params)
+    respond_to do |format|
+      if @violation.save
+        format.html { redirect_to @violation, notice: 'violation was successfully created.' }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+      end
+    end
+
   end
 
   def edit

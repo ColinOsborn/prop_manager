@@ -19,7 +19,7 @@ RSpec.feature 'User wants to submit/create a violation' do
     click_on 'Submit Violation'
 
     expect(page).to have_content violation_title
-    expect(page).to have_content violation_description
+    expect(page).to have_content violation_text
   end
 
   # context 'the violation submitted is invalid' do
