@@ -14,17 +14,30 @@ class ViolationsController < ApplicationController
     respond_to do |format|
       if @violation.save
         format.html { redirect_to @violation, notice: 'violation was successfully created.' }
+        format.json { render json: @violation.errors, status: :unprocessable_entity }
       else
         format.html { render :new, status: :unprocessable_entity }
+        format.json { render :new, status: :ok, location: @violation }
       end
     end
-
   end
 
   def edit
   end
 
   def show
+  end
+
+  def update
+    respond_to do |format|
+      if @violation.update(violation_params)
+        format.html { redirect_to @violation, notice: 'violation was successfully updated.' }
+        format.json { render :show, status: :ok, location: @violation }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @violation.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   private

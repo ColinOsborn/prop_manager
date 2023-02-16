@@ -8,7 +8,7 @@ RSpec.feature 'User wants to submit/create a violation' do
 
     visit root_path
     click_on 'Violations'
-    # new page - try to assert this
+
     expect(current_url).to eq('http://www.example.com/violations')
     click_on 'Report a Violation'
 
