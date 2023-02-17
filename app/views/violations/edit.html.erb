@@ -1,22 +1,9 @@
-<h1>Update Submitted Violation</h1>
+<div class="col-sm-8 violation-main">
 
-<%= form_for(@violation, :html => {multipart: true, class: "form-horizontal", role: "form"}) do |f| %>
-  <% if @violation.errors.any? %>
-    <%= pluralize(@violation.errors.count, "error") %>
-        prohibited this violation from being saved:
-            <% @violation.errors.full_messages.each do |msg| %>
-              <%= msg %>
-              <% end %>
-    <% end %>
-  <% end %>
+  <h1>Update Submitted Violation</h1>
 
-<%= form_for(@violation, html: {multipart: true}) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-  <%= f.label :image, "Attach an Image" %>
-  <%= f.file_field :image %>
+  <%= render 'form', violation: @violation %>
+  <%= link_to 'Show', @violation %>
+  <%= link_to 'Back', violations_path %>
 
-  <%= f.submit 'Update Violation' %>
-<% end %>
+</div>

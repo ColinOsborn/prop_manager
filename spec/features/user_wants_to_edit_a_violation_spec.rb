@@ -17,7 +17,7 @@ RSpec.feature 'User edits the recently created violation' do
     fill_in 'violation_title', with: violation.title
     fill_in 'violation_description', with: violation.description
 
-    click_on 'Submit Violation'
+    click_on 'Submit'
 
     # expect(current_url).to eq("http://www.example.com/violations/#{violation.id}")
     expect(page).to have_content violation.title
@@ -29,7 +29,7 @@ RSpec.feature 'User edits the recently created violation' do
 
     fill_in 'violation_description', with: new_description
 
-    click_on "Update Violation"
+    click_on 'Submit'
 
     expect(page).to have_content violation.title
     expect(page).to have_content new_description
