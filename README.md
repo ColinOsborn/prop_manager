@@ -11,7 +11,8 @@ The big goals for the MVP of this app are:
 
 Things you should know
 
-* Ruby version: 2.7.2, Rails version: 7.0.4
+* Ruby version: `3.1.4`, Rails version: `7.0.4`
+
 * System dependencies
 
 * Configuration
@@ -26,4 +27,3 @@ Things you should know
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
