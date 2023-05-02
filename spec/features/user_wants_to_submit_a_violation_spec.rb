@@ -14,7 +14,6 @@ RSpec.feature 'User wants to submit/create a violation' do
 
     fill_in 'violation_title', with: violation_title
     fill_in 'violation_description', with: violation_text
-    # fill_in 'violation_image_path', with: violation_image_path
 
     click_on 'Submit'
 
