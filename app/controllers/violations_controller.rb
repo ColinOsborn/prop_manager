@@ -1,5 +1,5 @@
 class ViolationsController < ApplicationController
-  before_action :set_violation, only: %i[ show edit update ]
+  before_action :set_violation, only: %i[show edit update]
 
   def index
     @violations = Violation.all.last(5)
@@ -47,6 +47,6 @@ class ViolationsController < ApplicationController
   end
 
   def violation_params
-    params.require(:violation).permit(:title, :description, :image)
+    params.require(:violation).permit(:title, :description, :photo)
   end
 end
