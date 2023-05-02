@@ -22,11 +22,9 @@ class ViolationsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
-  def show
-  end
+  def show; end
 
   def update
     respond_to do |format|

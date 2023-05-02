@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_14_031048) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_02_203359) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "address"
+    t.string "phone_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "violations", force: :cascade do |t|
     t.string "title"
@@ -20,6 +29,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_14_031048) do
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_violations_on_user_id"
   end
 
+  add_foreign_key "violations", "users"
 end
