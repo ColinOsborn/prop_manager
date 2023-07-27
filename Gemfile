@@ -30,6 +30,11 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootstrap', '~> 5.1', '>= 5.1.3'
 gem 'image_processing', '~> 1.2'
 
+# S3 AWS integration
+gem 'carrierwave-aws', '~> 1.6'
+gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
+gem 'mini_magick', '~> 4.12'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
