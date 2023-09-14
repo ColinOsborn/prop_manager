@@ -2,7 +2,7 @@
 
 <%= @violation.title %>
 <%= @violation.description %>
-<%= @violation.photo %>
+<%= image_tag(@violation.main_image) %>
 
  <%= link_to 'Edit Submitted Violation', edit_violation_path(@violation) %>
 

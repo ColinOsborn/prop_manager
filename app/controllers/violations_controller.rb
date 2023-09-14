@@ -22,11 +22,9 @@ class ViolationsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
-  def show
-  end
+  def show; end
 
   def update
     respond_to do |format|
@@ -47,6 +45,6 @@ class ViolationsController < ApplicationController
   end
 
   def violation_params
-    params.require(:violation).permit(:title, :description, :photo)
+    params.require(:violation).permit(:title, :description, :main_image, :thumb_image)
   end
 end

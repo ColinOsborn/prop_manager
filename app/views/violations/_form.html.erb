@@ -21,6 +21,11 @@
     <%= f.text_area :description, class: 'form-control', rows: 15 %>
   </div>
   <br>
+
+  <div class="form-group">
+    <%= f.file_field :main_image %>
+  </div>
+  <br>
   <div class="form-group">
     <label class="btn btn-primary">
       Upload an image <%= f.file_field :photo, style: 'display:none;' %>
