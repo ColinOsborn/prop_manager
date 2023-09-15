@@ -55,5 +55,9 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'aws-sdk-s3', require: false
+gem 'aws-sdk-s3'
+gem 'boostrap-sass'
+gem 'jquery-fileupload-rails'
+gem 'roda'
+gem 'shrine'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

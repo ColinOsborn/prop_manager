@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount ImageUploader::UploadEndpoint => 'images/upload'
   devise_for :users, :controllers => { :registrations => 'registrations' }
 
   devise_scope :user do
