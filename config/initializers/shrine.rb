@@ -1,10 +1,10 @@
 require 'shrine/storage/s3'
 
 s3_options = {
-  bucket: Rails.application.secrets.aws_bucket,
-  access_key_id: Rails.application.secrets.aws_access_key_id,
-  secret_access_key: Rails.application.secrets.aws_secret_access_key,
-  region: Rails.application.secrets.aws_region
+  bucket: Rails.application.credentials.bucket,
+  access_key_id: Rails.application.credentials.access_key_id,
+  secret_access_key: Rails.application.credentials.secret_access_key,
+  region: Rails.application.credentials.region
 }
 
 Shrine.storages = {
@@ -12,6 +12,6 @@ Shrine.storages = {
   store: Shrine::Storage::S3.new(**s3_options)
 }
 
-Shrine.plugin :active_record
+Shrine.plugin :activerecord
 Shrine.plugin :direct_upload
 Shrine.plugin :restore_cached_data
