@@ -5,6 +5,31 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+hoa1 = HousingAssociation.create!(
+  name: 'Thompson Corner',
+  zip_code: '81623',
+  state: 'Colorado'
+)
+puts "#{hoa1.name} has been created!"
+hoa2 = HousingAssociation.create!(
+  name: 'Valley Pines',
+  zip_code: '81621',
+  state: 'Colorado'
+)
+puts "#{hoa2.name} has been created!"
+hoa3 = HousingAssociation.create!(
+  name: 'Aspen Hills',
+  zip_code: '81611',
+  state: 'Colorado'
+)
+puts "#{hoa3.name} has been created!"
+hoa4 = HousingAssociation.create!(
+  name: 'The Villas at Elk Run',
+  zip_code: '81621',
+  state: 'Colorado'
+)
+puts "#{hoa4.name} has been created!"
+
 User.create!(
   email: 'user1@example.com',
   name: 'Mark Otto',
@@ -15,7 +40,8 @@ User.create!(
   sign_in_count: 3,
   city: 'Basalt',
   password: 'password',
-  password_confirmation: 'password'
+  password_confirmation: 'password',
+  housing_association_id: hoa1.id
 )
 puts 'User1 has been created!'
 User.create!(
@@ -28,7 +54,8 @@ User.create!(
   sign_in_count: 3,
   city: 'Aspen',
   password: 'password',
-  password_confirmation: 'password'
+  password_confirmation: 'password',
+  housing_association_id: hoa2.id
 )
 puts 'User2 has been created!'
 User.create!(
@@ -41,7 +68,8 @@ User.create!(
   sign_in_count: 5,
   city: 'Aspen',
   password: 'password',
-  password_confirmation: 'password'
+  password_confirmation: 'password',
+  housing_association_id: hoa2.id
 )
 puts 'User3 has been created!'
 User.create!(
@@ -54,7 +82,8 @@ User.create!(
   sign_in_count: 5,
   city: 'Aspen',
   password: 'password',
-  password_confirmation: 'password'
+  password_confirmation: 'password',
+  housing_association: hoa4.id
 )
 puts 'User4 has been created!'
 User.create!(
@@ -67,7 +96,8 @@ User.create!(
   sign_in_count: 8,
   city: 'Aspen',
   password: 'password',
-  password_confirmation: 'password'
+  password_confirmation: 'password',
+  housing_association_id: hoa4.id
 )
 puts 'User5 has been created!'
 User.create!(
@@ -80,6 +110,7 @@ User.create!(
   sign_in_count: 8,
   city: 'Basalt',
   password: 'password',
-  password_confirmation: 'password'
+  password_confirmation: 'password',
+  housing_association_id: hoa4.id
 )
 puts 'User6 has been created!'
