@@ -1,0 +1,41 @@
+// Place all the styles related to the Dashboar controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import "bootstrap";
+// @import "font-awesome";
+
+// Sidebar
+.sidebar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 100;
+  padding: 70px 0 0 10px;
+  border-right: 1px solid #d3d3d3;
+}
+
+.left-sidebar {
+  position: sticky;
+  top: 0;
+  height: calc(100vh - 70px)
+}
+
+.sidebar-nav li .nav-link {
+  color: #333;
+  font-weight: 500;
+}
+
+/* Solid border */
+hr.solid {
+  border-top: 3px solid #bbb;
+}
+
+// Table 
+main {
+  padding-top: 90px;
+}
+
+main .card {
+  margin-bottom: 20px;
+}
