@@ -13,12 +13,17 @@
     </thead>
     <tbody>
       <tr>
+      <tr>
+        <% @users.each do |user| %>
         <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
+        <td><%= @user.first_name %></td>
+        <td><%= @user.last_name %></td>
+        <%# <td>Mark</td>
+        <td>Otto</td> %>
         <td>Valley Pines</td>
       </tr>
-      <tr>
+        <% end %>
+      <%# <tr>
         <th scope="row">2</th>
         <td>Jacob</td>
         <td>Thornton</td>
@@ -41,7 +46,7 @@
         <td>Kate</td>
         <td>Mayers</td>
         <td>Valley Pines</td>
-      </tr>
+      </tr> %>
     </tbody>
   </table>
 </div>
