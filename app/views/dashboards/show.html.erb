@@ -24,7 +24,7 @@
         <th scope="row"><%= user.id %></th>
         <td><%= user.first_name %></td>
         <td><%= user.last_name %></td>
-        <td>Valley Pines</td>
+        <td><%= user.housing_association.name %></td>
       </tr>
         <% end %>
     </tbody>
