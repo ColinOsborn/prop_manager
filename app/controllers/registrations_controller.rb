@@ -8,6 +8,7 @@ class RegistrationsController < Devise::RegistrationsController
                                  :city,
                                  :state,
                                  :zip_code,
+                                 :housing_association.id.to_i,
                                  :phone_number,
                                  :password,
                                  :password_confirmation)
