@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
 
   root to: 'home#index'
+  resource :appointments, only: [:show, :index]
   resource :dashboard, only: [:show]
 
   devise_scope :user do
