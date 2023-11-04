@@ -10,9 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_04_021223) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_04_024416) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accounts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "appointments", force: :cascade do |t|
     t.string "image"
@@ -62,6 +67,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_04_021223) do
     t.datetime "updated_at", null: false
     t.index ["account_id"], name: "index_laborers_on_account_id"
     t.index ["user_id"], name: "index_laborers_on_user_id"
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.string "title"
+    t.datetime "start"
+    t.datetime "end"
+    t.integer "trainer_id"
+    t.integer "account_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_schedules_on_account_id"
+    t.index ["trainer_id"], name: "index_schedules_on_trainer_id"
   end
 
   create_table "users", force: :cascade do |t|
